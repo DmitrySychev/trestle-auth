@@ -5,11 +5,14 @@
     <% end %>
   </header>
 
-  <% if flash[:error] -%>
-    <div class="alert alert-danger error-bg">
-      <p><%= flash[:error] %></p>
-    </div>
-  <% end -%>
+<% unless flash.empty? %>
+   <script type="text/javascript">
+      <% flash.each do |f| %>
+    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+   	 toastr['<%= type %>']('<%= f[1] %>');
+   <% end %>
+   </script>
+<% end %>
 
   <%= render "form", f: f %>
 <% end %>
