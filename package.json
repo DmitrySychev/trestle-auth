@@ -12,6 +12,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "toastr": "^2.1.4",
     "trestle": "https://github.com/TrestleAdmin/trestle.git"
   },
   "devDependencies": {
